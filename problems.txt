@@ -1,0 +1,22 @@
+Exercises
+
+A. Write a function that fills an array of size N with the numbers from 1 to N in random order
+without duplicates
+
+Refrain from using shuffling algorithms or framework provided methods
+
+B. Write a method that takes a string as input and encodes the message according to the
+following rule: encode every letter into its corresponding numbered position in the alphabet.
+Symbols and spaces will also be used in the input:
+- af5c a#! is encoded as 1653 1#!
+- hello 45 is encoded as 85121215 45
+- jaj-a is encoded as 10110-1
+
+C. Write a method that takes a string as input and returns true only if the brackets are correctly
+matched and each one is accounted for. Only round brackets are allowed.
+The output should be:
+- true for afdoi$%dw
+- true for (hello (world))
+- false for ((hello (world))
+- true for (c(oder)) b(yte)
+- false for (coder))byte(
