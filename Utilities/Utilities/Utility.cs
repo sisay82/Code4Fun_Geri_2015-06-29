@@ -16,7 +16,7 @@ namespace Utilities
         ///  Fills an array of size N with the numbers from 1 to N in random order without duplicates
         /// </summary>
         /// <param name="arrayToFill">Array To fill</param>
-        public static void RandomArrayFill(Object[] arrayToFill)
+        public static void RandomArrayFill(Int32[] arrayToFill)
         {
 
             int n = arrayToFill.Length;
