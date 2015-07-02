@@ -10,7 +10,7 @@ namespace Utilities
     [TestFixture]
     public class RandomArrayFillTest : AssertionHelper
     {
-        Object[] ints = new Object[20];
+        Int32[] ints = new Int32[20];
 
         [SetUp]
         public void Init()
@@ -24,12 +24,6 @@ namespace Utilities
             Assert.That(ints, Is.All.Not.Null);
         }
 
-        [Test]
-        public void Check02IntTypeElements()
-        {
-            Assert.That(ints, Is.All.InstanceOf(typeof(int)));
-        }
-        
         [Test]
         public void Check03UniqueElements()
         {
