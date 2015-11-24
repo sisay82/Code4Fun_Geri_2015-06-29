@@ -23,7 +23,7 @@ namespace Utilities
         {
             Assert.That(ints, Is.All.Not.Null);
         }
-        
+
         [Test]
         public void Check03UniqueElements()
         {
