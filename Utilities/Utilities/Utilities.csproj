@@ -35,6 +35,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MultiThreadExample.cs" />
     <Compile Include="Utility.cs" />
     <Compile Include="UtilityTest.cs" />
   </ItemGroup>

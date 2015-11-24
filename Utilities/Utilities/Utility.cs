@@ -2,14 +2,52 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Utilities
 {
     public class Utility
     {
-        static void Main(string[] args)
+        public static void Main(String[] args)
         {
+            int result = 0;   // Result initialized to say there is no error 0 no error 1 error
+            SharedData data = new SharedData();
+
+            SharedDataProd prod = new SharedDataProd(data, 20);
+            SharedDataCons cons = new SharedDataCons(data, 20);
+
+            Thread producer = new Thread(new ThreadStart(prod.ThreadRun));
+            Thread consumer = new Thread(new ThreadStart(cons.ThreadRun));
+            // Threads producer and consumer have been created
+
+            try
+            {
+                producer.Start();
+                consumer.Start();
+
+                producer.Join();
+                consumer.Join();
+                // threads producer and consumer have finished at this point.
+            }
+            catch (ThreadStateException e)
+            {
+                Console.WriteLine(e);  // Display text of exception
+                result = 1;
+            }
+            catch (ThreadInterruptedException e)
+            {
+                Console.WriteLine(e);  // This exception means that the thread
+                // was interrupted during a Wait
+                result = 1;
+            }
+
+            Console.WriteLine("Press any key to end the program.");
+            Console.ReadKey();
+
+            // This provides a return code to 
+            // the parent process.
+            Environment.ExitCode = result;
         }
 
         /// <summary>
